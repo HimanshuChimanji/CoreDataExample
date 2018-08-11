@@ -61,16 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				7F09F8E0211EA1EA00A2A3A3 /* AppDelegate.swift */,
-				7F09F8E2211EA1EA00A2A3A3 /* ViewController.swift */,
+				7F09F8F9211EE30E00A2A3A3 /* CoreData */,
 				7F09F8E4211EA1EA00A2A3A3 /* Main.storyboard */,
-				7F09F8EA211EA1EC00A2A3A3 /* Assets.xcassets */,
-				7F09F8EC211EA1EC00A2A3A3 /* LaunchScreen.storyboard */,
-				7F09F8EF211EA1EC00A2A3A3 /* Info.plist */,
 				7F09F8E7211EA1EA00A2A3A3 /* CoreDataExample.xcdatamodeld */,
-				7F09F8F5211ECC6F00A2A3A3 /* ShowCoreDataViewController.swift */,
-				7F09F8F7211ECCC900A2A3A3 /* ShowCoreDataTableViewCell.swift */,
+				7F09F8EC211EA1EC00A2A3A3 /* LaunchScreen.storyboard */,
+				7F09F8EA211EA1EC00A2A3A3 /* Assets.xcassets */,
+				7F09F8EF211EA1EC00A2A3A3 /* Info.plist */,
 			);
 			path = CoreDataExample;
+			sourceTree = "<group>";
+		};
+		7F09F8F9211EE30E00A2A3A3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7F09F8E2211EA1EA00A2A3A3 /* ViewController.swift */,
+				7F09F8F7211ECCC900A2A3A3 /* ShowCoreDataTableViewCell.swift */,
+				7F09F8F5211ECC6F00A2A3A3 /* ShowCoreDataViewController.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

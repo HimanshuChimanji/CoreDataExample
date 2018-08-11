@@ -39,6 +39,7 @@ class ShowCoreDataViewController: UIViewController , UITableViewDelegate , UITab
                 for result in results as! [NSManagedObject]
                 {
                     //                    context.delete(result)
+                    
                     if let userName = result.value(forKey: "userName")
                     {
                         print("User Name:\(userName)")
@@ -111,5 +112,57 @@ class ShowCoreDataViewController: UIViewController , UITableViewDelegate , UITab
         cell.showUserNameLbl.text = userNameArray[indexPath.row]
         cell.showUserPassword.text = userPasswordArray[indexPath.row]
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        request.returnsObjectsAsFaults = false
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    //                    context.delete(result)
+                    
+                    if let userName = result.value(forKey: "userName") as? String
+                    {
+                        print("User Name:\(userName)")
+                        if userName == userNameArray[indexPath.row]
+                        {
+                            context.delete(result)
+                        }
+                    }
+                    do
+                    {
+                        try context.save()
+                    }
+                    catch
+                    {
+                        
+                    }
+                    
+                }
+                userNameArray.remove(at: indexPath.row)
+                userPasswordArray.remove(at: indexPath.row)
+
+                OperationQueue.main.addOperation {
+                    self.showCoreDataTableView.reloadData()
+                }
+                print(userNameArray)
+                print(userPasswordArray)
+            }
+            else
+            {
+                print("Noo Data Found")
+            }
+            
+        }
+        catch
+        {
+            
+        }
     }
 }
