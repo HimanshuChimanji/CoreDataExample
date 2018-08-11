@@ -29,26 +29,37 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "ShowDataSegue", sender: self)
     }
     
+    @IBAction func updateDataInCoreData(_ sender: UIButton) {
+        performSegue(withIdentifier: "UpdateCoreData", sender: self)
+    }
+    
+    
+    @IBAction func searchInCoreData(_ sender: UIButton) {
+    }
     @IBAction func submitButton(_ sender: UIButton) {
         let userNames = userNameTf.text
         let passwords = passwordTf.text
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-                let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
+        if userNames != "" && passwords != ""
+        {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
+
                 newUser.setValue(userNames, forKey: "userName")
                 newUser.setValue(passwords, forKey: "password")
+            do
+            {
+                try context.save()
+                print("Saved")
+                userNameTf.text = ""
+                passwordTf.text = ""
+            }
+            catch
+            {
+                // Process Error
+            }
+        }
         
-                do
-                {
-                    try context.save()
-                    print("Saved")
-                    userNameTf.text = ""
-                    passwordTf.text = ""
-                }
-                catch
-                {
-                    // Process Error
-                }
     }
     
 }

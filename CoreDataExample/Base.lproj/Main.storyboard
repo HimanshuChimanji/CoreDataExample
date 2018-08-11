@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="T5X-fy-TH9">
-                                <rect key="frame" x="20" y="229" width="335" height="209"/>
+                                <rect key="frame" x="20" y="194.5" width="335" height="278"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="JT8-P6-gCk">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="79"/>
@@ -60,7 +62,38 @@
                                             <action selector="ShowCoreDataButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T6G-Vl-FLq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Drt-7j-Pza">
+                                        <rect key="frame" x="0.0" y="238" width="335" height="40"/>
+                                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="HJI-Ch-tlp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Update Value of Core Data">
+                                            <color key="titleColor" white="0.97026909719999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateDataInCoreData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6W9-Fe-9lg"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXK-be-NeH">
+                                        <rect key="frame" x="0.0" y="262" width="335" height="40"/>
+                                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="R7C-Yq-yEp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Search Value from  Core Data">
+                                            <color key="titleColor" white="0.97026909719999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchInCoreData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="saq-uo-C3t"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="MXK-be-NeH" firstAttribute="firstBaseline" secondItem="Drt-7j-Pza" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="S7C-zd-1Q3"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,11 +110,105 @@
                         <outlet property="passwordTf" destination="jTv-TU-Fft" id="sMA-g2-FI1"/>
                         <outlet property="userNameTf" destination="Ccg-vX-VUx" id="mWS-xH-ThV"/>
                         <segue destination="BV6-Yw-uyD" kind="show" identifier="ShowDataSegue" id="au6-oD-CFi"/>
+                        <segue destination="79D-8h-UQS" kind="show" identifier="UpdateCoreData" id="coq-Qk-6JP"/>
+                        <segue destination="rLz-nr-Odh" kind="show" id="FbR-xt-lI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1407.2" y="47.226386806596707"/>
+        </scene>
+        <!--Update Core Data View Controller-->
+        <scene sceneID="bBY-d8-o9E">
+            <objects>
+                <viewController storyboardIdentifier="UpdateCoreDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="79D-8h-UQS" customClass="UpdateCoreDataViewController" customModule="CoreDataExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HNY-IE-4Ya">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3oX-QW-7Eh">
+                                <rect key="frame" x="10" y="231" width="355" height="206"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Person" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xEa-hJ-NrJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1OT-6G-wcS">
+                                        <rect key="frame" x="0.0" y="40" width="355" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wUp-qH-oXW">
+                                        <rect key="frame" x="0.0" y="80" width="355" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYD-PF-Dy0">
+                                        <rect key="frame" x="0.0" y="120" width="355" height="40"/>
+                                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="mUq-oW-ldw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Update Detail">
+                                            <color key="titleColor" white="0.97026909719999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateDetail:" destination="79D-8h-UQS" eventType="touchUpInside" id="C3L-Ih-6fw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVb-1x-XyK">
+                                        <rect key="frame" x="0.0" y="170" width="355" height="36"/>
+                                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Show Data">
+                                            <color key="titleColor" white="0.97026909719999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showDataButton:" destination="79D-8h-UQS" eventType="touchUpInside" id="x1O-KT-kwR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KL9-wQ-Pef" firstAttribute="trailing" secondItem="3oX-QW-7Eh" secondAttribute="trailing" constant="10" id="RQj-vJ-FwB"/>
+                            <constraint firstItem="3oX-QW-7Eh" firstAttribute="centerX" secondItem="HNY-IE-4Ya" secondAttribute="centerX" id="ZqI-7M-L21"/>
+                            <constraint firstItem="3oX-QW-7Eh" firstAttribute="leading" secondItem="KL9-wQ-Pef" secondAttribute="leading" constant="10" id="bNy-nh-o9K"/>
+                            <constraint firstItem="3oX-QW-7Eh" firstAttribute="centerY" secondItem="HNY-IE-4Ya" secondAttribute="centerY" id="hUk-mT-p4g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KL9-wQ-Pef"/>
+                    </view>
+                    <connections>
+                        <outlet property="newUserNameTf" destination="1OT-6G-wcS" id="xvB-CO-FRv"/>
+                        <outlet property="newUserPassword" destination="wUp-qH-oXW" id="lkZ-2Z-YYU"/>
+                        <outlet property="selectUserNameTf" destination="xEa-hJ-NrJ" id="eEz-9M-Vll"/>
+                        <segue destination="BV6-Yw-uyD" kind="show" identifier="UCSCSegue" id="9CB-yE-VBe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ToO-uA-j5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1448.8" y="895.50224887556226"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jp4-E6-nAs">
+            <objects>
+                <viewController id="rLz-nr-Odh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Q9-GJ-dYj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fOp-Id-0Zk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V7i-qg-qUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2337" y="896"/>
         </scene>
         <!--Show Core Data View Controller-->
         <scene sceneID="rqF-9M-587">
@@ -224,4 +351,7 @@
             <point key="canvasLocation" x="468" y="47.226386806596707"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9CB-yE-VBe"/>
+    </inferredMetricsTieBreakers>
 </document>

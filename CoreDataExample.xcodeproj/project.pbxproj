@@ -15,6 +15,7 @@
 		7F09F8EE211EA1EC00A2A3A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F09F8EC211EA1EC00A2A3A3 /* LaunchScreen.storyboard */; };
 		7F09F8F6211ECC6F00A2A3A3 /* ShowCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09F8F5211ECC6F00A2A3A3 /* ShowCoreDataViewController.swift */; };
 		7F09F8F8211ECCC900A2A3A3 /* ShowCoreDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09F8F7211ECCC900A2A3A3 /* ShowCoreDataTableViewCell.swift */; };
+		7F09F8FB211EF10400A2A3A3 /* UpdateCoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09F8FA211EF10400A2A3A3 /* UpdateCoreDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7F09F8EF211EA1EC00A2A3A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F09F8F5211ECC6F00A2A3A3 /* ShowCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCoreDataViewController.swift; sourceTree = "<group>"; };
 		7F09F8F7211ECCC900A2A3A3 /* ShowCoreDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCoreDataTableViewCell.swift; sourceTree = "<group>"; };
+		7F09F8FA211EF10400A2A3A3 /* UpdateCoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCoreDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				7F09F8E2211EA1EA00A2A3A3 /* ViewController.swift */,
 				7F09F8F7211ECCC900A2A3A3 /* ShowCoreDataTableViewCell.swift */,
 				7F09F8F5211ECC6F00A2A3A3 /* ShowCoreDataViewController.swift */,
+				7F09F8FA211EF10400A2A3A3 /* UpdateCoreDataViewController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F09F8FB211EF10400A2A3A3 /* UpdateCoreDataViewController.swift in Sources */,
 				7F09F8F6211ECC6F00A2A3A3 /* ShowCoreDataViewController.swift in Sources */,
 				7F09F8E3211EA1EA00A2A3A3 /* ViewController.swift in Sources */,
 				7F09F8E1211EA1EA00A2A3A3 /* AppDelegate.swift in Sources */,
